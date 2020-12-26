@@ -224,6 +224,33 @@ prefix_trees.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutocompleteCPP.dir/build.make CMakeFiles/AutocompleteCPP.dir/prefix_trees.cpp.s
 .PHONY : prefix_trees.cpp.s
 
+support.o: support.cpp.o
+
+.PHONY : support.o
+
+# target to build an object file
+support.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutocompleteCPP.dir/build.make CMakeFiles/AutocompleteCPP.dir/support.cpp.o
+.PHONY : support.cpp.o
+
+support.i: support.cpp.i
+
+.PHONY : support.i
+
+# target to preprocess a source file
+support.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutocompleteCPP.dir/build.make CMakeFiles/AutocompleteCPP.dir/support.cpp.i
+.PHONY : support.cpp.i
+
+support.s: support.cpp.s
+
+.PHONY : support.s
+
+# target to generate assembly for a file
+support.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutocompleteCPP.dir/build.make CMakeFiles/AutocompleteCPP.dir/support.cpp.s
+.PHONY : support.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,6 +269,9 @@ help:
 	@echo "... prefix_trees.o"
 	@echo "... prefix_trees.i"
 	@echo "... prefix_trees.s"
+	@echo "... support.o"
+	@echo "... support.i"
+	@echo "... support.s"
 .PHONY : help
 
 

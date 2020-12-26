@@ -83,13 +83,13 @@
 		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/autocomplete_engines.cpp">
 			<Option target="AutocompleteCPP"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/autocomplete_engines.h">
-			<Option target="AutocompleteCPP"/>
-		</Unit>
 		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/main.cpp">
 			<Option target="AutocompleteCPP"/>
 		</Unit>
 		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/prefix_trees.cpp">
+			<Option target="AutocompleteCPP"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/support.cpp">
 			<Option target="AutocompleteCPP"/>
 		</Unit>
 		<Unit filename="/cygdrive/d/CLionProjects/AutocompleteCPP/CMakeLists.txt">

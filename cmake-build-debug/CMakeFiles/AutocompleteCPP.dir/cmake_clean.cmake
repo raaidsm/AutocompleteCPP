@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AutocompleteCPP.dir/autocomplete_engines.cpp.o"
   "CMakeFiles/AutocompleteCPP.dir/main.cpp.o"
   "CMakeFiles/AutocompleteCPP.dir/prefix_trees.cpp.o"
+  "CMakeFiles/AutocompleteCPP.dir/support.cpp.o"
   "libAutocompleteCPP.dll.a"
 )
 
