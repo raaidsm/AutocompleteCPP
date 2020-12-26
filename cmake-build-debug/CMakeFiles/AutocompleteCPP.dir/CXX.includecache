@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/d/CLionProjects/AutocompleteCPP/autocomplete_engines.cpp
+iostream
+-
+prefix_trees.cpp
+/cygdrive/d/CLionProjects/AutocompleteCPP/prefix_trees.cpp
+
+/cygdrive/d/CLionProjects/AutocompleteCPP/main.cpp
+iostream
+-
+
+/cygdrive/d/CLionProjects/AutocompleteCPP/prefix_trees.cpp
+iostream
+-
+support.cpp
+/cygdrive/d/CLionProjects/AutocompleteCPP/support.cpp
+
+/cygdrive/d/CLionProjects/AutocompleteCPP/support.cpp
+iostream
+-
+

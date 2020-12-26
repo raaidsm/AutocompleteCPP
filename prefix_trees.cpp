@@ -6,10 +6,10 @@ using namespace std;
 class AutocompleterInterface {
 public:
     virtual int getLength() = 0;
-    virtual void insert(string, float, AutocompleterInterface*) = 0;
-    virtual void remove(AutocompleterInterface*) = 0;
-    virtual NodeReport* autocomplete(AutocompleterInterface*) = 0;
-    virtual NodeReport* autocomplete(AutocompleterInterface*, int) = 0;
+    virtual void insert(string, float, string) = 0;
+    virtual void remove(string) = 0;
+    virtual NodeReport* autocomplete(string) = 0;
+    virtual NodeReport* autocomplete(string, int) = 0;
 };
 
 class SimplePrefixTree : public AutocompleterInterface {
@@ -20,10 +20,12 @@ protected:
     float* _weights;
     WeightType _weightType;
 
-    virtual void insertSum(string& value, float weight, AutocompleterInterface* prefix) {}
-    virtual float insertAverage(string& value, float weight, AutocompleterInterface* prefix) {}
-    virtual void removeSum(AutocompleterInterface*) {}
-    virtual float* removeAverage(AutocompleterInterface*) {}
+    virtual void insertSum(string& value, float weight, string& prefix) {
+        //
+    }
+    virtual float insertAverage(string& value, float weight, string& prefix) {}
+    virtual void removeSum(string& prefix) {}
+    virtual float* removeAverage(string& prefix) {}
 
 public:
     ~SimplePrefixTree() = default;
@@ -44,8 +46,8 @@ public:
 
     bool isEmpty() {}
     bool isLeaf() {}
-    string stringRep() {}
-    void insert(string value, float weight, AutocompleterInterface* prefix) override {
+    string stringRep() {} //Returns string representation (equivalent to __str__() in Python)
+    void insert(string value, float weight, string prefix) override {
         if (_weightType == eSum) {
             insertSum(value, weight, prefix);
         }
@@ -53,7 +55,7 @@ public:
             insertAverage(value, weight, prefix);
         }
     }
-    void remove(AutocompleterInterface* prefix) override {
+    void remove(string prefix) override {
         if (_weightType == eSum) {
             removeSum(prefix);
         }
@@ -61,16 +63,16 @@ public:
             removeAverage(prefix);
         }
     }
-    NodeReport* autocomplete(AutocompleterInterface* prefix) override {}
-    NodeReport* autocomplete(AutocompleterInterface* prefix, int limit) override {}
+    NodeReport* autocomplete(string prefix) override {}
+    NodeReport* autocomplete(string prefix, int limit) override {}
 };
 
 class CompressedPrefixTree : public SimplePrefixTree {
 protected:
-    void insertSum(string& value, float weight, AutocompleterInterface* prefix) override {}
-    float insertAverage(string& value, float weight, AutocompleterInterface* prefix) override {}
-    void removeSum(AutocompleterInterface*) override {}
-    float* removeAverage(AutocompleterInterface*) override {}
+    void insertSum(string& value, float weight, string& prefix) override {}
+    float insertAverage(string& value, float weight, string& prefix) override {}
+    void removeSum(string& prefix) override {}
+    float* removeAverage(string& prefix) override {}
 
 public:
     ~CompressedPrefixTree() = default;
@@ -79,6 +81,6 @@ public:
     CompressedPrefixTree(string value, float weight, SimplePrefixTree* subtrees, float* weights,
                          WeightType weightType) : SimplePrefixTree(value, weight, subtrees, weights, weightType) {}
 
-    NodeReport* autocomplete(AutocompleterInterface* prefix) override {}
-    NodeReport* autocomplete(AutocompleterInterface* prefix, int limit) override {}
+    NodeReport* autocomplete(string prefix) override {}
+    NodeReport* autocomplete(string prefix, int limit) override {}
 };
